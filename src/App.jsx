@@ -29,6 +29,10 @@ import ListagemOrcamento from './pages/orcamento/Listagem';
 import CadastroOrcamento from './pages/orcamento/Cadastro';
 import AlteracaoOrcamento from './pages/orcamento/Alteracao';
 import ExclusaoOrcamento from './pages/orcamento/Exclusao';
+import ListagemUsuario from './pages/usuarios/Listagem';
+import CadastroUsuario from './pages/usuarios/Cadastro';
+import AlteracaoUsuario from './pages/usuarios/Alteracao';
+import ExclusaoUsuario from './pages/usuarios/Exclusao';
 
 function App() {
   const [tema, setTema] = useState("light");
@@ -66,6 +70,12 @@ function App() {
                 <Route path='cadastrar' element={<CadastroOrcamento />} />
                 <Route path='alterar/:id' element={<AlteracaoOrcamento />} />
                 <Route path='excluir/:id' element={<ExclusaoOrcamento />} />
+              </Route>
+              <Route path='usuarios'>
+                <Route index element={<ListagemUsuario />} />
+                <Route path='cadastrar' element={<CadastroUsuario />} />
+                <Route path='alterar/:id' element={<AlteracaoUsuario />} />
+                <Route path='excluir/:id' element={<ExclusaoUsuario />} />
               </Route>
               <Route path='relatorios'>
                 <Route index element={<ListagemRelatorio />} />
