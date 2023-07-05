@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container">
+        <div className="container-fluid px-5">
           <a className="navbar-brand" href="/">
             <span className="fs-3"> 💰 </span>
             <span className="fs-3">SGF</span>
@@ -29,6 +29,11 @@ const Header = () => {
             <div className="navbar-nav">
               <NavLink to="/" className="nav-link">Principal</NavLink>
               <NavLink to="/categorias" className="nav-link">Categorias</NavLink>
+              <NavLink to="/contas" className="nav-link">Contas</NavLink>
+              <NavLink to="/favorecidos" className="nav-link">Favorecidos</NavLink>
+              <NavLink to="/orcamentos" className="nav-link">Orçamentos</NavLink>
+              <NavLink to="/transacoes" className="nav-link">Transações</NavLink>
+              <NavLink to="/relatorios" className="nav-link">Relatorios</NavLink>
 
               <a href="#" className="nav-link" onClick={handleTemaClick}>
                 {tema === "dark" && (

@@ -47,7 +47,7 @@ const Form = ({ handleSubmit, handleChange, errors, inputs }) => {
 			<FormInput type="text" field="tipo" label="Tipo" placeholder="Tipo da conta" error={errors?.tipo} onChange={handleChange} value={inputs?.tipo} />
 			<FormInput type="text" field="descricao" label="Descrição" placeholder="Descrição da conta" error={errors?.descricao} onChange={handleChange} value={inputs?.descricao} />
 			<FormInput type="text" field="saldo" label="Saldo" placeholder="0" error={errors?.saldo} onChange={handleChange} value={inputs?.saldo} /> 
-			<FormButtons cancelTarget="/categorias" />
+			<FormButtons cancelTarget="/contas" />
 		</form>
 	)
 }

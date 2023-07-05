@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { validar, handleChange } from "../../lib/FormUtils";
 import validador from "../../lib/ValidadorCategoria";
-import FormCategoria from "../../components/categoria/Form";
+import FormOrcamento from "../../components/orcamento/Form";
 
 const Alteracao = () => {
 	const [inputs, setInputs] = useState({});
@@ -16,16 +16,16 @@ const Alteracao = () => {
 	const id = useParams().id;
 
 	if (!id) {
-		navigate('/categorias');
+		navigate('/orcamentos');
 	}
 
 	function carregarDados() {
-		axios.get(`/categorias/${id}`)
+		axios.get(`/orcamentos/${id}`)
 			.then((resp) => {
 				if (resp.status === 200) {
 					setInputs(resp.data);
 				} else if (resp.status === 404) {
-					navigate("/categorias");
+					navigate("/orcamentos");
 				} else {
 					console.log(resp);
 				}
@@ -52,11 +52,11 @@ const Alteracao = () => {
 		e.preventDefault();
 		validarLocal(() => {
 			axios
-				.put(`/categorias/${id}`, inputs)
+				.put(`/orcamentos/${id}`, inputs)
 				.then((resp) => {
 					if(resp.status == 200){
-						toast.success("Categoria Alterada com sucesso");
-						navigate('/categorias');
+						toast.success("Orçamento Alterado com sucesso");
+						navigate('/orcamentos');
 					}
 				});
 		});
@@ -69,9 +69,9 @@ const Alteracao = () => {
 
 	return (
 		<>
-			<h1>Alteração de Categorias</h1>
+			<h1>Alteração de Orçamento</h1>
 			<hr />
-			<FormCategoria handleSubmit={handleSubmit} handleChange={handleChangeLocal} inputs={inputs} errors={errors} />
+			<FormOrcamento handleSubmit={handleSubmit} handleChange={handleChangeLocal} inputs={inputs} errors={errors} />
 		</>
 	)
 }

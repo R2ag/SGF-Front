@@ -5,8 +5,9 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { validar, handleChange } from "../../lib/FormUtils";
-import validador from "../../lib/ValidadorCategoria";
-import FormCategoria from "../../components/categoria/Form";
+
+import validador from "../../lib/ValidadorFavorecido";
+import FormFavorecido from '../../components/favorecido/Form';
 
 const Alteracao = () => {
 	const [inputs, setInputs] = useState({});
@@ -16,16 +17,16 @@ const Alteracao = () => {
 	const id = useParams().id;
 
 	if (!id) {
-		navigate('/categorias');
+		navigate('/favorecidos');
 	}
 
 	function carregarDados() {
-		axios.get(`/categorias/${id}`)
+		axios.get(`/favorecidos/${id}`)
 			.then((resp) => {
 				if (resp.status === 200) {
 					setInputs(resp.data);
 				} else if (resp.status === 404) {
-					navigate("/categorias");
+					navigate("/favorecidos");
 				} else {
 					console.log(resp);
 				}
@@ -48,15 +49,16 @@ const Alteracao = () => {
 		handleChange(e, setInputs, inputs);
 	}
 
+
 	function handleSubmit(e){
 		e.preventDefault();
 		validarLocal(() => {
 			axios
-				.put(`/categorias/${id}`, inputs)
+				.put(`/favorecidos/${id}`, inputs)
 				.then((resp) => {
 					if(resp.status == 200){
-						toast.success("Categoria Alterada com sucesso");
-						navigate('/categorias');
+						toast.success("Favorecido Alterado com sucesso");
+						navigate('/favorecidos');
 					}
 				});
 		});
@@ -67,11 +69,12 @@ const Alteracao = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [inputs]);
 
+
 	return (
 		<>
-			<h1>Alteração de Categorias</h1>
+			<h1>Alteração de Favorecido</h1>
 			<hr />
-			<FormCategoria handleSubmit={handleSubmit} handleChange={handleChangeLocal} inputs={inputs} errors={errors} />
+			<FormFavorecido handleSubmit={handleSubmit} handleChange={handleChangeLocal} inputs={inputs} errors={errors} />
 		</>
 	)
 }
