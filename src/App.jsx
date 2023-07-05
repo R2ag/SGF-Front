@@ -33,6 +33,10 @@ import ListagemUsuario from './pages/usuarios/Listagem';
 import CadastroUsuario from './pages/usuarios/Cadastro';
 import AlteracaoUsuario from './pages/usuarios/Alteracao';
 import ExclusaoUsuario from './pages/usuarios/Exclusao';
+import ListagemTransacao from './pages/transacao/Listagem';
+import CadastroTransacao from './pages/transacao/Cadastro';
+import AlteracaoTransacao from './pages/transacao/Alteracao';
+import ExclusaoTransacao from './pages/transacao/Exclusao';
 
 function App() {
   const [tema, setTema] = useState("light");
@@ -70,6 +74,12 @@ function App() {
                 <Route path='cadastrar' element={<CadastroOrcamento />} />
                 <Route path='alterar/:id' element={<AlteracaoOrcamento />} />
                 <Route path='excluir/:id' element={<ExclusaoOrcamento />} />
+              </Route>
+              <Route path='transacao'>
+                <Route index element={<ListagemTransacao />} />
+                <Route path='cadastrar' element={<CadastroTransacao />} />
+                <Route path='alterar/:id' element={<AlteracaoTransacao />} />
+                <Route path='excluir/:id' element={<ExclusaoTransacao />} />
               </Route>
               <Route path='usuarios'>
                 <Route index element={<ListagemUsuario />} />
