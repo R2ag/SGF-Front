@@ -5,7 +5,7 @@ const Footer = () => {
   const { tema, } = useContext(AppContext);
   return (
     <>
-      <footer className={`fixed-bottom bg-body-tertiary ${tema === "dark" ? "text-light" : "text-dark"} text-center p-3`}>
+      <footer className={` bg-body-tertiary ${tema === "dark" ? "text-light" : "text-dark"} text-center p-3`}>
         Copyright &copy; SGF - Gestão financeira 2023 <br />
         Todos os direitos reservados.
       </footer>

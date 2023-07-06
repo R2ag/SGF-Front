@@ -57,10 +57,10 @@ const Listagem = () => {
 									<td>{transacao.conta.nome}</td>
 									<td>{transacao.favorecido.nome}</td>
 									<td>
-										<Link className="btn btn-sm btn-success me-1" to={`/categorias/alterar/${transacao.id}`}>
+										<Link className="btn btn-sm btn-success me-1" to={`/transacoes/alterar/${transacao.id}`}>
 											<i className="bi bi-pen" title="Alterar"></i>
 										</Link>
-										<Link className="btn btn-sm btn-danger" to={`/categorias/excluir/${transacao.id}`}>
+										<Link className="btn btn-sm btn-danger" to={`/transacoes/excluir/${transacao.id}`}>
 											<i className="bi bi-trash" title="Excluir"></i>
 										</Link>
 									</td>

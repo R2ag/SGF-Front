@@ -53,10 +53,10 @@ const Listagem = () => {
 									<td>{orcamento.valorTotal}</td>
 									<td>{orcamento.usuario.nome}</td>
 									<td>
-										<Link className="btn btn-sm btn-success me-1" to={`/categorias/alterar/${orcamento.id}`}>
+										<Link className="btn btn-sm btn-success me-1" to={`/orcamentos/alterar/${orcamento.id}`}>
 											<i className="bi bi-pen" title="Alterar"></i>
 										</Link>
-										<Link className="btn btn-sm btn-danger" to={`/categorias/excluir/${orcamento.id}`}>
+										<Link className="btn btn-sm btn-danger" to={`/orcamentos/excluir/${orcamento.id}`}>
 											<i className="bi bi-trash" title="Excluir"></i>
 										</Link>
 									</td>
