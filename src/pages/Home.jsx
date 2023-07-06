@@ -1,6 +1,6 @@
 const Home = () => {
 	return (
-		<div style={{ height: '500px', overflowY: 'scroll' }}>
+		<div >
 			<h1>Bem-vindo ao Sistema de Gestão Financeira!</h1>
 			<p>Aqui você pode gerenciar seus orçamentos e transações financeiras de forma simples e eficiente.</p>
 			<h2>Recursos disponíveis:</h2>

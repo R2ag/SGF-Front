@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { validar, handleChange } from "../../lib/FormUtils";
 
 import validador from "../../lib/ValidadorConta";
-import FormConta from '../../components/usuario/Form';
+import FormConta from '../../components/conta/Form';
 
 const Alteracao = () => {
 	const [inputs, setInputs] = useState({});

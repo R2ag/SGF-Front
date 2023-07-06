@@ -29,10 +29,10 @@ import ListagemOrcamento from './pages/orcamento/Listagem';
 import CadastroOrcamento from './pages/orcamento/Cadastro';
 import AlteracaoOrcamento from './pages/orcamento/Alteracao';
 import ExclusaoOrcamento from './pages/orcamento/Exclusao';
-import ListagemUsuario from './pages/usuarios/Listagem';
-import CadastroUsuario from './pages/usuarios/Cadastro';
-import AlteracaoUsuario from './pages/usuarios/Alteracao';
-import ExclusaoUsuario from './pages/usuarios/Exclusao';
+import ListagemUsuario from './pages/usuario/Listagem';
+import CadastroUsuario from './pages/usuario/Cadastro';
+import AlteracaoUsuario from './pages/usuario/Alteracao';
+import ExclusaoUsuario from './pages/usuario/Exclusao';
 import ListagemTransacao from './pages/transacao/Listagem';
 import CadastroTransacao from './pages/transacao/Cadastro';
 import AlteracaoTransacao from './pages/transacao/Alteracao';
@@ -75,7 +75,7 @@ function App() {
                 <Route path='alterar/:id' element={<AlteracaoOrcamento />} />
                 <Route path='excluir/:id' element={<ExclusaoOrcamento />} />
               </Route>
-              <Route path='transacao'>
+              <Route path='transacoes'>
                 <Route index element={<ListagemTransacao />} />
                 <Route path='cadastrar' element={<CadastroTransacao />} />
                 <Route path='alterar/:id' element={<AlteracaoTransacao />} />

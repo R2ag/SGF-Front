@@ -89,20 +89,57 @@ const Form = ({ handleSubmit, handleChange, errors, inputs }) => {
 			<FormInput type="text" field="valorTotal" label="Valor" placeholder="1000" error={errors?.valorTotal} onChange={handleChange} value={inputs?.valorTotal} />
 
 			{orcamentosCategorias.map((orcamentoCategoria, index) => (
-				<div key={index}>
-					<FormInput type="text" field={`orcamentosCategorias.${index}.descricao`} label="Descrição" placeholder="Descrição da categoria" error={errors?.orcamentosCategorias?.[index]?.descricao} onChange={(e) => handleOrcamentoCategoriaChange(index, "descricao", e.target.value)} value={orcamentoCategoria.descricao} />
-					<FormInput type="text" field={`orcamentosCategorias.${index}.valor`} label="Valor" placeholder="Valor da categoria" error={errors?.orcamentosCategorias?.[index]?.valor} onChange={(e) => handleOrcamentoCategoriaChange(index, "valor", e.target.value)} value={orcamentoCategoria.valor} />
-					<FormSelect field={`orcamentosCategorias.${index}.categoriaId`} label="Categoria" placeholder="Selecione a categoria" error={errors?.orcamentosCategorias?.[index]?.categoriaId} onChange={(e) => handleOrcamentoCategoriaChange(index, "categoriaId", e.target.value)} value={orcamentoCategoria.categoriaId} options={optionsCategorias} />
-					<button type="button" onClick={() => removeOrcamentoCategoria(index)}>
-						Remover Categoria
-					</button>
+				<div className="row align-items-center" key={index}>
+					<div className="col-md-3">
+						<FormSelect
+							field={`orcamentosCategorias.${index}.categoriaId`}
+							label="Categoria"
+							placeholder="Selecione a categoria"
+							error={errors?.orcamentosCategorias?.[index]?.categoriaId}
+							onChange={(e) => handleOrcamentoCategoriaChange(index, "categoriaId", e.target.value)}
+							value={orcamentoCategoria.categoriaId}
+							options={optionsCategorias}
+						/>
+					</div>
+					<div className="col-md-5">
+						<FormInput
+							type="text"
+							field={`orcamentosCategorias.${index}.descricao`}
+							label="Descrição"
+							placeholder="Descrição da categoria"
+							error={errors?.orcamentosCategorias?.[index]?.descricao}
+							onChange={(e) => handleOrcamentoCategoriaChange(index, "descricao", e.target.value)}
+							value={orcamentoCategoria.descricao}
+						/>
+					</div>
+					<div className="col-md-2">
+						<FormInput
+							type="text"
+							field={`orcamentosCategorias.${index}.valor`}
+							label="Valor"
+							placeholder="Valor da categoria"
+							error={errors?.orcamentosCategorias?.[index]?.valor}
+							onChange={(e) => handleOrcamentoCategoriaChange(index, "valor", e.target.value)}
+							value={orcamentoCategoria.valor}
+						/>
+					</div>
+
+					<div className="col-md-2">
+						<button className="btn btn-secondary me-2 mt-3" type="button" onClick={() => removeOrcamentoCategoria(index)}>
+							Remover Categoria
+						</button>
+					</div>
 				</div>
 			))}
-			<button type="button" onClick={addOrcamentoCategoria}>
-				Adicionar Categoria
-			</button>
 
-			<FormButtons cancelTarget="/categorias" />
+			<div className="row" >
+
+				<button className="btn btn-primary mt-3" type="button" onClick={addOrcamentoCategoria}>
+					Adicionar Categoria
+				</button>
+
+				<FormButtons cancelTarget="/orcamentos" />
+			</div>
 		</form>
 	)
 }

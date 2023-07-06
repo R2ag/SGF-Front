@@ -34,6 +34,7 @@ const Header = () => {
               <NavLink to="/orcamentos" className="nav-link">Orçamentos</NavLink>
               <NavLink to="/transacoes" className="nav-link">Transações</NavLink>
               <NavLink to="/relatorios" className="nav-link">Relatorios</NavLink>
+              <NavLink to="/usuarios" className="nav-link">Usuários</NavLink>
 
               <a href="#" className="nav-link" onClick={handleTemaClick}>
                 {tema === "dark" && (

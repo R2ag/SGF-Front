@@ -51,7 +51,7 @@ const Listagem = () => {
 									<td>{orcamento.dataInicio}</td>
 									<td>{orcamento.dataFinal}</td>
 									<td>{orcamento.valorTotal}</td>
-									<td>{orcamento.usuarios.nome}</td>
+									<td>{orcamento.usuario.nome}</td>
 									<td>
 										<Link className="btn btn-sm btn-success me-1" to={`/categorias/alterar/${orcamento.id}`}>
 											<i className="bi bi-pen" title="Alterar"></i>

@@ -26,7 +26,7 @@ const Cadastro = () => {
 		e.preventDefault();
 		validarLocal(() => {
 			axios
-				.post('/conta', inputs)
+				.post('/contas', inputs)
 				.then((resp) =>{
 					if(resp.status == 201){
 						toast.success("Conta inserida com suceso!");
